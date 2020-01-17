@@ -7,7 +7,13 @@ import MovieThumb from "./elements/MovieThumb";
 import Spinner from "./elements/Spinner";
 import LoadMoreBtn from "./elements/LoadMoreBtn";
 
+import { useHomeFetch } from "./hooks/useHomeFetch";
+
 const Home = () => {
+  const [{ state, loading, error }, fetchMovies] = useHomeFetch();
+
+  console.log(state);
+
   return (
     <>
       <HeroImage />
